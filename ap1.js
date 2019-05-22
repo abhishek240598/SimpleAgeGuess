@@ -29,17 +29,19 @@ function getAge(dateString) {
       userday = userday + d.getDate();
       usermonth = (12 - usermonth) + d.getMonth();
       useryear = d.getFullYear() - useryear - 1;
-                
+          
+        if(userday >=30){
+          usermonth = usermonth+ 1;
+          userday = userday - 30;
+        }
+
         if (usermonth >= 12)
         {
         useryear = useryear + 1;
         usermonth = usermonth - 12;
         }
 
-        if(userday >=30){
-          usermonth = usermonth+ 1;
-          userday = userday - 30;
-        }
+
 
     console.log("user age is "+useryear+"years "+usermonth+"month "+userday+"day");
 
